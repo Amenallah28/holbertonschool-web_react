@@ -23,3 +23,21 @@ test('renders h1 element with text "School Dashboard"', () => {
     expect(imageElement).toBeInTheDocument();
   });
   
+  it("are the input elements renderd", () => {
+    render(<App />)
+    const allInputs = screen.getAllByRole("textbox")
+    allInputs.map((elem) => {expect(elem).toBeInTheDocument()})
+})
+it("are the labels rendred", () => {
+    render(<App />)
+    const email = screen.getByLabelText(/Email/i)
+    const password = screen.getByLabelText(/Password/i)
+    expect(email).toBeInTheDocument()
+    expect(password).toBeInTheDocument()
+})
+it("is the button rendred", () => {
+    render(<App />)
+    const btn = screen.getByRole("button", { name: /ok/i })
+    expect(btn).toBeInTheDocument()
+    expect(btn.textContent).toMatch(/OK/i)
+})
