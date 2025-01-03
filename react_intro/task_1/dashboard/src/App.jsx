@@ -1,7 +1,7 @@
 import './App.css';
 import holbertonLogo from './assets/holberton-logo.jpg';
 import { getCurrentYear , getFooterCopy } from './utils';
-import Notifications from './Notifications';
+import Notifications from './Notifications.jsx';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <p>Login to access the full dashboard</p>
       </div>
       <div className="App-footer">
-        <p>&copy; {getCurrentYear()} {getFooterCopy(false)} </p>
+        <p>Copyright {getCurrentYear()} - {getFooterCopy()} </p>
       </div>
     </div>
   );
